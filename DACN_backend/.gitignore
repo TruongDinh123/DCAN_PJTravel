@@ -2,4 +2,6 @@
 /vendor
 /.idea
 .idea/
-.env
+.
+/config.json
+/connectDB.js

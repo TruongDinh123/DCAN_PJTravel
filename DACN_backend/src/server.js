@@ -47,5 +47,5 @@ let port = process.env.PORT || 6969;
 
 app.listen(port, () => {
   //cb
-  console.log("Truong Quang Dinh is running on the mic:" + port);
+  console.log("Server is running on the port:" + port);
 });

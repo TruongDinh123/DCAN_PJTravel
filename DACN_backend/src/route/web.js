@@ -1,19 +1,24 @@
 import express from "express";
-import homeControllers from "../controllers/homeControllers";
+import homeController from "../controllers/homeControllers";
 import userController from "../controllers/userController";
-import homepage from "../controllers/homeControllers";
 let router = express.Router();
 
 let initWebRoutes = (app) => {
-  //truyền ứng dụng server vào bên trong hàm này
+    router.get('/', homeController.getHomePage);
+    router.get('/create-user-crud', homeController.getCRUD);
+    router.post('/post-crud', homeController.postCRUD);
+    router.get('/display-crud', homeController.displayCRUD);
+    
+    router.get('/edit-crud', homeController.editCRUD);
+    router.post('/edit-put-crud', homeController.putCRUD);
 
-  router.get("/", homeControllers.getHomePage);
-  router.get("/crud", homeControllers.getCRUD);
-  router.post("/post-crud", homeControllers.postCRUD);
-  router.get("/get-crud", homeControllers.displaygetCRUD);
+    router.get('/delete-crud', homeController.deleteCRUD);
+    
+    // API
+    router.post('/api/login', userController.handleLogin);
+    router.get('/api/get-all-users', userController.handleGetAllUsers);
 
-  router.post("/api/login", userController.handleLogin);
-  return app.use("/", router);
-};
+    return app.use("/", router);
+}
 
 module.exports = initWebRoutes;
