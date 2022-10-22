@@ -14,7 +14,7 @@ import { path } from "../utils";
 
 import Home from "../routes/Home";
 // import Login from '../routes/Login';
-import Login from "./Auth/Login";
+import Login from "./Admin/Login";
 import Signup from "./Auth/Signup";
 import Social from "./Social/Social";
 import Tour from "./Tour/Tour";
